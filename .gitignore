@@ -1,6 +1,15 @@
 data/swissimage_dwnl_10cm/
 data/wms_crops
 
+# Image files
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+*.gif
+*.bmp
+
 *.code-workspace
 
 # Python-generated files
