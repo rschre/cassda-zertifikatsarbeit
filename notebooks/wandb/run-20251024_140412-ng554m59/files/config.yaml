@@ -1,0 +1,269 @@
+_wandb:
+    value:
+        cli_version: 0.22.2
+        e:
+            ei3t9n5t899zg1w01f0zgqqeqbrulgh0:
+                codePath: notebooks\train-yolo-model.ipynb
+                codePathLocal: train-yolo-model.ipynb
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "509546008576"
+                        used: "452248907776"
+                email: raffael.schreiber@gmail.com
+                executable: c:\code\cassda-zertifikatsarbeit\.venv\Scripts\python.exe
+                git:
+                    commit: 98c3e31e4b06ee44cbc54cbededa1ae8b542be76
+                    remote: https://github.com/rschre/cassda-zertifikatsarbeit.git
+                gpu: NVIDIA GeForce RTX 4070 Ti SUPER
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 8448
+                      memoryTotal: "17171480576"
+                      name: NVIDIA GeForce RTX 4070 Ti SUPER
+                      uuid: GPU-37e3e58a-1a9d-291e-c95d-8c2e2bbc76e0
+                host: DESKTOP-52CNESF
+                memory:
+                    total: "68539891712"
+                os: Windows-11-10.0.26100-SP0
+                program: c:\code\cassda-zertifikatsarbeit\notebooks\train-yolo-model.ipynb
+                python: CPython 3.13.1
+                root: c:\code\cassda-zertifikatsarbeit\notebooks
+                startedAt: "2025-10-24T12:04:12.116393Z"
+                writerId: ei3t9n5t899zg1w01f0zgqqeqbrulgh0
+        m: []
+        python_version: 3.13.1
+        t:
+            "1":
+                - 1
+            "2":
+                - 1
+                - 41
+                - 80
+            "3":
+                - 2
+                - 13
+                - 16
+                - 61
+            "4": 3.13.1
+            "5": 0.22.2
+            "8":
+                - 1
+                - 3
+            "12": 0.22.2
+            "13": windows-amd64
+agnostic_nms:
+    value: false
+amp:
+    value: true
+augment:
+    value: false
+auto_augment:
+    value: randaugment
+batch:
+    value: 16
+bgr:
+    value: 0
+box:
+    value: 7.5
+cache:
+    value: false
+cfg:
+    value: null
+classes:
+    value: null
+close_mosaic:
+    value: 10
+cls:
+    value: 0.5
+conf:
+    value: null
+copy_paste:
+    value: 0
+copy_paste_mode:
+    value: flip
+cos_lr:
+    value: false
+crop_fraction:
+    value: 1
+data:
+    value: ../data/combined_wildlife_poly_bridges_filtered-yolo/data.yaml
+degrees:
+    value: 0
+deterministic:
+    value: true
+device:
+    value: null
+dfl:
+    value: 1.5
+dnn:
+    value: false
+dropout:
+    value: 0
+dynamic:
+    value: false
+embed:
+    value: null
+epochs:
+    value: 1000
+erasing:
+    value: 0.4
+exist_ok:
+    value: true
+fliplr:
+    value: 0.5
+flipud:
+    value: 0
+format:
+    value: torchscript
+fraction:
+    value: 1
+freeze:
+    value: null
+half:
+    value: false
+hsv_h:
+    value: 0.015
+hsv_s:
+    value: 0.7
+hsv_v:
+    value: 0.4
+imgsz:
+    value: 512
+int8:
+    value: false
+iou:
+    value: 0.7
+keras:
+    value: false
+kobj:
+    value: 1
+line_width:
+    value: null
+lr0:
+    value: 0.01
+lrf:
+    value: 0.01
+mask_ratio:
+    value: 4
+max_det:
+    value: 300
+mixup:
+    value: 0
+mode:
+    value: train
+model:
+    value: ../model/checkpoints/yolov8n-obb.pt
+momentum:
+    value: 0.937
+mosaic:
+    value: 1
+multi_scale:
+    value: false
+name:
+    value: yolov8n-obb-wildlife-bridges
+nbs:
+    value: 64
+nms:
+    value: false
+opset:
+    value: null
+optimize:
+    value: false
+optimizer:
+    value: auto
+overlap_mask:
+    value: true
+patience:
+    value: 10
+perspective:
+    value: 0
+plots:
+    value: true
+pose:
+    value: 12
+pretrained:
+    value: true
+profile:
+    value: false
+project:
+    value: cassda-wildlife-crossing
+rect:
+    value: false
+resume:
+    value: false
+retina_masks:
+    value: false
+save:
+    value: true
+save_conf:
+    value: false
+save_crop:
+    value: false
+save_dir:
+    value: cassda-wildlife-crossing\yolov8n-obb-wildlife-bridges
+save_frames:
+    value: false
+save_hybrid:
+    value: false
+save_json:
+    value: false
+save_period:
+    value: -1
+save_txt:
+    value: false
+scale:
+    value: 0.5
+seed:
+    value: 0
+shear:
+    value: 0
+show:
+    value: false
+show_boxes:
+    value: true
+show_conf:
+    value: true
+show_labels:
+    value: true
+simplify:
+    value: true
+single_cls:
+    value: false
+source:
+    value: null
+split:
+    value: val
+stream_buffer:
+    value: false
+task:
+    value: obb
+time:
+    value: null
+tracker:
+    value: botsort.yaml
+translate:
+    value: 0.1
+val:
+    value: true
+verbose:
+    value: true
+vid_stride:
+    value: 1
+visualize:
+    value: false
+warmup_bias_lr:
+    value: 0.1
+warmup_epochs:
+    value: 3
+warmup_momentum:
+    value: 0.8
+weight_decay:
+    value: 0.0005
+workers:
+    value: 8
+workspace:
+    value: null

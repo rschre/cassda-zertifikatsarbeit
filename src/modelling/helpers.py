@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
 
-def train_test_val_split(
+def split_dataset(
     input_dir, output_dir, train_size=0.7, val_size=0.15, test_size=0.15, random_seed=42
 ):
     """

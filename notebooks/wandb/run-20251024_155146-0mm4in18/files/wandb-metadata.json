@@ -1,0 +1,17 @@
+{
+  "os": "Windows-11-10.0.26100-SP0",
+  "python": "CPython 3.13.1",
+  "startedAt": "2025-10-24T13:51:46.799602Z",
+  "program": "c:\\code\\cassda-zertifikatsarbeit\\notebooks\\train-yolo-model.ipynb",
+  "codePath": "notebooks\\train-yolo-model.ipynb",
+  "codePathLocal": "train-yolo-model.ipynb",
+  "git": {
+    "remote": "https://github.com/rschre/cassda-zertifikatsarbeit.git",
+    "commit": "98c3e31e4b06ee44cbc54cbededa1ae8b542be76"
+  },
+  "email": "raffael.schreiber@gmail.com",
+  "root": "c:\\code\\cassda-zertifikatsarbeit\\notebooks",
+  "host": "DESKTOP-52CNESF",
+  "executable": "c:\\code\\cassda-zertifikatsarbeit\\.venv\\Scripts\\python.exe",
+  "writerId": "kxil9grsb99tk684nvdxgzxnxqiomd5n"
+}

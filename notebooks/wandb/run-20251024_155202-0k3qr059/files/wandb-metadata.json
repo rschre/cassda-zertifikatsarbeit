@@ -1,0 +1,40 @@
+{
+  "os": "Windows-11-10.0.26100-SP0",
+  "python": "CPython 3.13.1",
+  "startedAt": "2025-10-24T13:52:02.976173Z",
+  "program": "c:\\code\\cassda-zertifikatsarbeit\\notebooks\\train-yolo-model.ipynb",
+  "codePath": "notebooks\\train-yolo-model.ipynb",
+  "codePathLocal": "train-yolo-model.ipynb",
+  "git": {
+    "remote": "https://github.com/rschre/cassda-zertifikatsarbeit.git",
+    "commit": "98c3e31e4b06ee44cbc54cbededa1ae8b542be76"
+  },
+  "email": "raffael.schreiber@gmail.com",
+  "root": "c:\\code\\cassda-zertifikatsarbeit\\notebooks",
+  "host": "DESKTOP-52CNESF",
+  "executable": "c:\\code\\cassda-zertifikatsarbeit\\.venv\\Scripts\\python.exe",
+  "cpu_count": 8,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "509546008576",
+      "used": "446569328640"
+    }
+  },
+  "memory": {
+    "total": "68539891712"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4070 Ti SUPER",
+      "memoryTotal": "17171480576",
+      "cudaCores": 8448,
+      "architecture": "Ada",
+      "uuid": "GPU-37e3e58a-1a9d-291e-c95d-8c2e2bbc76e0"
+    }
+  ],
+  "cudaVersion": "13.0",
+  "writerId": "5rgztr4v78owbzr0rn2vkerjpfja8pao"
+}

@@ -1,0 +1,8 @@
+path: combined_wildlife_poly_bridges_filtered-yolo
+
+train: images/train
+val: images/val
+test: images/test
+
+names:
+    0: wildlife_crossing
