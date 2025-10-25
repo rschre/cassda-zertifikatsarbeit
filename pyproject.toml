@@ -13,6 +13,7 @@ dependencies = [
     "libpysal>=4.13.0",
     "mapclassify>=2.10.0",
     "matplotlib>=3.10.7",
+    "nbformat>=5.10.4",
     "opencv-python>=4.12.0.88",
     "owslib>=0.34.1",
     "pyproj>=3.7.2",
