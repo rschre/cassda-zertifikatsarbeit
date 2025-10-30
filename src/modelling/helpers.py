@@ -1,6 +1,7 @@
 import glob
 import logging
 import os
+import shutil
 
 import matplotlib.patches as patches
 import matplotlib.pyplot as plt
@@ -43,7 +44,7 @@ def split_dataset(
     images_folder = os.path.join(input_dir, "images")
     annotations_folder = os.path.join(input_dir, "labels")
 
-    img_ids = glob.glob(os.path.join(images_folder, "*.png"))
+    img_ids = glob.glob(os.path.join(images_folder, "*.jpg"))
 
     train_split = int(len(img_ids) * train_size)
     val_split = int(len(img_ids) * val_size)
@@ -70,14 +71,14 @@ def split_dataset(
 
         for img_path in split_ids:
             img_filename = os.path.basename(img_path)
-            label_filename = img_filename.replace(".png", ".txt").replace(
+            label_filename = img_filename.replace(".jpg", ".txt").replace(
                 "images", "labels"
             )
 
             # Copy image
-            os.rename(img_path, os.path.join(split_image_dir, img_filename))
+            shutil.copy(img_path, os.path.join(split_image_dir, img_filename))
             # Copy label
-            os.rename(
+            shutil.copy(
                 os.path.join(annotations_folder, label_filename),
                 os.path.join(split_label_dir, label_filename),
             )
