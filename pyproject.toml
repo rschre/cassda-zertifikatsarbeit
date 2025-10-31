@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "albumentations>=2.0.8",
+    "contextily>=1.6.2",
     "fiona>=1.10.1",
     "folium>=0.20.0",
     "geopandas>=1.1.1",
@@ -16,9 +17,11 @@ dependencies = [
     "nbformat>=5.10.4",
     "opencv-python>=4.12.0.88",
     "owslib>=0.34.1",
+    "plotly>=6.3.1",
     "pyproj>=3.7.2",
     "rasterio>=1.4.3",
     "shapely>=2.1.2",
+    "supervision>=0.26.1",
     "ultralytics<=8.3.40",
     "wandb>=0.22.2",
 ]

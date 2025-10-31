@@ -1,5 +1,6 @@
 data/swissimage_dwnl_10cm/
 data/wms_crops
+data/geodata/*highway*.*json
 
 # Image files
 *.jpg
