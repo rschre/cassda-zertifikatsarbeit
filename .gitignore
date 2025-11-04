@@ -3,13 +3,13 @@ data/wms_crops
 data/geodata/*highway*.*json
 
 # Image files
-*.jpg
-*.jpeg
-*.png
-*.tif
-*.tiff
-*.gif
-*.bmp
+*/**/*.jpg
+*/**/*.jpeg
+*/**/*.png
+*/**/*.tif
+*/**/*.tiff
+*/**/*.gif
+*/**/*.bmp
 
 *.code-workspace
 
