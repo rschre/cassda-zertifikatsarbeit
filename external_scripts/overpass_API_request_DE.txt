@@ -1,0 +1,28 @@
+[out:json][timeout:180];
+
+// Deutschland als Suchgebiet
+area["ISO3166-1"="DE"][admin_level=2]->.de;
+
+// --- 1️⃣ Brücken ---
+(
+  node["man_made"="wildlife_crossing"]["bridge"="yes"](area.de);
+  way["man_made"="wildlife_crossing"]["bridge"="yes"](area.de);
+  relation["man_made"="wildlife_crossing"]["bridge"="yes"](area.de);
+);
+out count;
+
+// --- 2️⃣ Tunnel ---
+(
+  node["man_made"="wildlife_crossing"]["tunnel"="yes"](area.de);
+  way["man_made"="wildlife_crossing"]["tunnel"="yes"](area.de);
+  relation["man_made"="wildlife_crossing"]["tunnel"="yes"](area.de);
+);
+out count;
+
+// --- 3️⃣ Ohne bridge oder tunnel ---
+(
+  node["man_made"="wildlife_crossing"](area.de)[!"bridge"][!"tunnel"];
+  way["man_made"="wildlife_crossing"](area.de)[!"bridge"][!"tunnel"];
+  relation["man_made"="wildlife_crossing"](area.de)[!"bridge"][!"tunnel"];
+);
+out count;

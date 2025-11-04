@@ -1,9 +1,14 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "cassda-zertifikatsarbeit"
+name = "detect-wildlife-crossings"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
+
 dependencies = [
     "albumentations>=2.0.8",
     "contextily>=1.6.2",
@@ -11,6 +16,7 @@ dependencies = [
     "folium>=0.20.0",
     "geopandas>=1.1.1",
     "ipykernel>=7.0.1",
+    "ipympl>=0.9.8",
     "libpysal>=4.13.0",
     "mapclassify>=2.10.0",
     "matplotlib>=3.10.7",
@@ -25,3 +31,18 @@ dependencies = [
     "ultralytics<=8.3.40",
     "wandb>=0.22.2",
 ]
+
+
+[tool.setuptools]
+# 👉 Here we define the package_dir mapping correctly
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests*"]
+
+[tool.uv.sources]
+detect-wildlife-crossings = { workspace = true }
+
+[dependency-groups]
+dev = ["detect-wildlife-crossings"]
