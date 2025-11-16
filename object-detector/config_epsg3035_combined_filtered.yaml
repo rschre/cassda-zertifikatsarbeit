@@ -1,0 +1,69 @@
+prepare_data.py:
+  datasets:
+    ground_truth_sectors_shapefile: data/combined_wildlife_poly_bridges_filtered.gpkg    
+    ground_truth_swimming_pools_shapefile: data/combined_wildlife_poly_bridges_filtered.gpkg
+    aoi_dataset: data/combined_wildlife_poly_bridges_filtered.gpkg
+  zoom_level: 16
+  output_folder: output_EPSG3035_combined_filtered
+
+generate_tilesets.py:
+  debug_mode: False
+  datasets:
+    aoi_tiles_geojson: output_EPSG3035_combined_filtered/aoi_z16_tiles.geojson
+    ground_truth_labels_geojson: output_EPSG3035_combined_filtered/ground_truth_labels.geojson
+    orthophotos_web_service:
+      type: WMS
+      url: https://image.discomap.eea.europa.eu/arcgis/services/GioLand/VHR_2021_LAEA/ImageServer/WMSServer/?request=GetCapabilities&service=WMS
+      layers: VHR_2021_LAEA
+      srs: "EPSG:3035"
+  output_folder: output_EPSG3035_combined_filtered
+  tile_size: 512
+  overwrite: False
+  n_jobs: 20
+  COCO_metadata:
+    year: 2021
+    version: 1.0
+    description: EEA VHR 2021 LAEA imagery
+    contributor: European Environment Agency
+    url: https://www.eea.europa.eu/
+    license:
+      name: Unknown
+      url:
+    category:
+        name: "wildlife-overpass"
+        supercategory: "transport"
+
+train_model.py:
+    working_folder: output_EPSG3035_combined_filtered
+    log_subfolder: logs/run_20251111_120952
+    sample_tagged_img_subfolder: sample_training_images
+    COCO_files:
+        trn: COCO_trn.json
+        val: COCO_val.json
+        tst: COCO_tst.json
+    detectron2_config_file: '../detectron2_config_ch.yaml'
+    model_weights:
+        model_zoo_checkpoint_url: "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml"
+
+make_predictions.py:
+    working_folder: output_EPSG3035_combined_filtered
+    log_subfolder: logs/run_20251111_133907
+    sample_tagged_img_subfolder: sample_prediction_images
+    COCO_files:
+        trn: COCO_trn.json
+        val: COCO_val.json
+        tst: COCO_tst.json
+    detectron2_config_file: '../detectron2_config_ch.yaml'
+    model_weights:
+        pth_file: './logs/run_20251111_133907/model_0000699.pth'
+
+assess_predictions.py:
+  datasets:
+    ground_truth_labels_geojson: output_EPSG3035_combined_filtered/ground_truth_labels.geojson
+    image_metadata_json: output_EPSG3035_combined_filtered/img_metadata.json
+    split_aoi_tiles_geojson: output_EPSG3035_combined_filtered/split_aoi_tiles.geojson
+    predictions:
+      trn: output_EPSG3035_combined_filtered/trn_predictions_at_0dot05_threshold.pkl
+      val: output_EPSG3035_combined_filtered/val_predictions_at_0dot05_threshold.pkl
+      tst: output_EPSG3035_combined_filtered/tst_predictions_at_0dot05_threshold.pkl
+  output_folder: output_EPSG3035_combined_filtered/assessment

@@ -1,0 +1,69 @@
+prepare_data.py:
+  datasets:
+    ground_truth_sectors_shapefile: data/Digitizing_Overpasses.gpkg    
+    ground_truth_swimming_pools_shapefile: data/Digitizing_Overpasses.gpkg
+    aoi_dataset: data/Digitizing_Overpasses.gpkg
+  zoom_level: 16
+  output_folder: output_EPSG3035_max_z16
+
+generate_tilesets.py:
+  debug_mode: False
+  datasets:
+    aoi_tiles_geojson: output_EPSG3035_max_z16/aoi_z16_tiles.geojson
+    ground_truth_labels_geojson: output_EPSG3035_max_z16/ground_truth_labels.geojson
+    orthophotos_web_service:
+      type: WMS
+      url: https://image.discomap.eea.europa.eu/arcgis/services/GioLand/VHR_2021_LAEA/ImageServer/WMSServer/?request=GetCapabilities&service=WMS
+      layers: VHR_2021_LAEA
+      srs: "EPSG:3035"
+  output_folder: output_EPSG3035_max_z16
+  tile_size: 1024
+  overwrite: False
+  n_jobs: 20
+  COCO_metadata:
+    year: 2021
+    version: 1.0
+    description: EEA VHR 2021 LAEA imagery
+    contributor: European Environment Agency
+    url: https://www.eea.europa.eu/
+    license:
+      name: Unknown
+      url:
+    category:
+        name: "wildlife-overpass"
+        supercategory: "transport"
+
+train_model.py:
+    working_folder: output_EPSG3035_max_z16
+    log_subfolder: logs
+    sample_tagged_img_subfolder: sample_training_images
+    COCO_files:
+        trn: COCO_trn.json
+        val: COCO_val.json
+        tst: COCO_tst.json
+    detectron2_config_file: '../detectron2_config_ch.yaml'
+    model_weights:
+        model_zoo_checkpoint_url: "COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_1x.yaml"
+
+make_predictions.py:
+    working_folder: output_EPSG3035_max_z16
+    log_subfolder: logs/run_20251111_113808
+    sample_tagged_img_subfolder: sample_prediction_images
+    COCO_files:
+        trn: COCO_trn.json
+        val: COCO_val.json
+        tst: COCO_tst.json
+    detectron2_config_file: '../detectron2_config_ch.yaml'
+    model_weights:
+        pth_file: './logs/run_20251111_113808/model_final.pth'
+
+assess_predictions.py:
+  datasets:
+    ground_truth_labels_geojson: output_EPSG3035_max_z16/ground_truth_labels.geojson
+    image_metadata_json: output_EPSG3035_max_z16/img_metadata.json
+    split_aoi_tiles_geojson: output_EPSG3035_max_z16/split_aoi_tiles.geojson
+    predictions:
+      trn: output_EPSG3035_max_z16/trn_predictions_at_0dot05_threshold.pkl
+      val: output_EPSG3035_max_z16/val_predictions_at_0dot05_threshold.pkl
+      tst: output_EPSG3035_max_z16/tst_predictions_at_0dot05_threshold.pkl
+  output_folder: output_EPSG3035_max_z16/assessments
