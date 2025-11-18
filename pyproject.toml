@@ -34,7 +34,6 @@ dependencies = [
 
 
 [tool.setuptools]
-# 👉 Here we define the package_dir mapping correctly
 package-dir = { "" = "src" }
 
 [tool.setuptools.packages.find]
