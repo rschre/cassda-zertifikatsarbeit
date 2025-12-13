@@ -3,6 +3,7 @@ model/runs/cassda-wildlife-crossing/yolo11-CH-conf0_35-visualize
 data/swissimage_dwnl_10cm/
 data/wms_crops
 data/geodata/*highway*.*json
+data/streets/*/*.geojson
 
 # Image files
 */**/*.jpg

@@ -28,6 +28,7 @@ dependencies = [
     "owslib>=0.34.1",
     "plotly>=6.3.1",
     "pyarrow>=22.0.0",
+    "pygeoutils>=0.19.5",
     "pyproj>=3.7.2",
     "rasterio>=1.4.3",
     "scikit-image>=0.25.2",
@@ -52,3 +53,6 @@ detect-wildlife-crossings = { workspace = true }
 
 [dependency-groups]
 dev = ["detect-wildlife-crossings"]
+
+[tool.ruff]
+extend-include = ["*.ipynb"]
